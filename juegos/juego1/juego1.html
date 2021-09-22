@@ -15,14 +15,21 @@
     <button class="iniciar">Iniciar</button>
 
     <div class="accion">
-        <div class="espacio-para-pregunta">Esto es una pregunta?</div>
-        <button class="comodin">Usar comodin</button>
-        <input type="radio" id="respuesta1" name="respuesta">
-        <label for="respuesta1">respuesta 1</label>
-        <input type="radio" id="respuesta2" name="respuesta">
-        <label for="respuesta2">respuesta 2</label>
-        <button class="enviar-respuesta">Enviar respuesta</button>
+        <button id="comodin">Usar comodin</button>
+        
+        <div id="pregunta">
+            <p id="espacio-para-pregunta"></p>
+            <input type="radio" name="pregunta" value="perro" id="opcion1">
+            <label for="opcion1" id="res-texto-1">perro</label>
+            
+            <input type="radio" name="pregunta" value="opcion2">
+            <label for="opcion2" id="res-texto-2">gato</label>
+        </div>
+        
+        <button id="boton-enviar">Enviar respuesta</button>
+        
         <p class="respuesta-correcta">La 2 e la que e</p>
+        
         <span class="puntaje-actual">5 puntos</span>
     </div>
 
