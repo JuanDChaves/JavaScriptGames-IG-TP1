@@ -14,28 +14,21 @@
 
     <button class="iniciar">Iniciar</button>
 
-    <div class="accion">
-        <button id="comodin">Usar comodin</button>
+    <div class="contenedor-del-juego" style="display: none;">
+        <!-- <button id="comodin">Usar comodin</button> -->
         
         <div id="pregunta">
-            <p id="espacio-para-pregunta"></p>
-            <input type="radio" name="pregunta" value="perro" id="opcion1">
-            <label for="opcion1" id="res-texto-1">perro</label>
+            <p id="espacio-para-pregunta">?</p>
             
-            <input type="radio" name="pregunta" value="opcion2">
-            <label for="opcion2" id="res-texto-2">gato</label>
+            <input type="radio" name="respuesta" class="respuesta" id="a" value="a">
+            <label for="a" id="texto-opcion-a">?</label>
+            
+            <input type="radio" name="respuesta" class="respuesta" id="b" value="b">
+            <label for="b" id="texto-opcion-b">?</label>
         </div>
-        
-        <button id="boton-enviar">Enviar respuesta</button>
-        
-        <p class="respuesta-correcta">La 2 e la que e</p>
-        
-        <span class="puntaje-actual">5 puntos</span>
-    </div>
 
-    <div class="final">
-        <p class="puntaje-final">puntaje final: 34</p>
-        <span class="nivel">Tu nivel es Roberto Baggio!</span>
+        <button id="boton-enviar"> Enviar respuesta</button>
+        
     </div>
 
     <script src="./juego1.js"></script>
