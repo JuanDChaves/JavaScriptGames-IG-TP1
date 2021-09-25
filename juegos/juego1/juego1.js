@@ -1,7 +1,8 @@
-// En las siguientes líneas declaro variables: inicio, espacioParaPregunta, enviarRespuesta y comodin XXXXXX que corresponden a botones en la página y al campo en donde van las preguntas, las respuestas y el resultado final. 
+// En las siguientes líneas declaro variables: inicio, comodin, espacioParaPregunta, botonEnviar, etc. que corresponden a botones en la página y a los campos en donde van las preguntas, las respuestas y el resultado final. 
 
 const inicio = document.querySelector(".iniciar")
-// const comodin = document.getElementById("comodin")
+const comodin = document.getElementById("comodin")
+const contenedorDelComodin = document.getElementById("contenedor-del-comodin")
 const espacioParaPregunta = document.getElementById("espacio-para-pregunta")
 const textoOpcionA = document.getElementById("texto-opcion-a")
 const textoOpcionB = document.getElementById("texto-opcion-b")
@@ -47,13 +48,11 @@ datosDelJuego = [
 ]
 
 // Estas tres variables son contadores que irán aumentando a lo largo del juego, por eso se declaran con let.
-
 let preguntaActual = 0
 let puntaje = 0
 let racha = 0
 
-// 
-
+// Con esta función inicia el juego. 
 iniciarJuego()
 
 function iniciarJuego () {
@@ -62,6 +61,8 @@ function iniciarJuego () {
         inicio.style.display = "none"
     })
 }
+
+// Esta función carga los datos desde el array a la página y evita la selección automática de alguno de los dos radio buttons. 
 
 cargarPregunta()
 
@@ -74,6 +75,16 @@ function cargarPregunta () {
     opcionA.checked = false
     opcionB.checked = false
 }
+
+// Con este event listener muestro la respuesta correcta. El botón desaparece y se muestra la respuesta y después de 3 segundos el contenedor del comodín desaparece
+comodin.addEventListener("click", (e) => {
+    let respuestaCorrecta = datosDelJuego[preguntaActual].correcta
+
+    contenedorDelComodin.innerHTML = `La respuesta correcta es: ${respuestaCorrecta}`
+
+    setTimeout(() => contenedorDelComodin.style.display = "none", 3000)
+
+})
 
 // Así recibo el evento click en el botón "enviar"
 botonEnviar.addEventListener("click", (e) => enviarRespuesta())
