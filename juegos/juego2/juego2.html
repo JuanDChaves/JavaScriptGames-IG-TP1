@@ -12,29 +12,32 @@
 <body>
     <h1>Juego 2</h1>
     <button id="btn-iniciar">Iniciar</button>
-    <!-- <div class="contenedor-del-juego">
-        <h3 id="numero-de-jugador">Eres el jugador 1</h3>
-        <div id="estado-actual">
-            <p>Ronda #: <span id="ronda-actual">1</span></p>
-            <p>Tiro: <span id="tiro-actual">1</span>/3</p>
-        </div> -->
-        <div class="dados">
-            <div id="dado-1"></div>
-            <div id="dado-2"></div>
-            <div id="dado-3"></div>
-            <button class="btn-tirar-dados activo" id="btn-jugador-1">Tirar los dados jugador 1</button>
-            <button class="btn-tirar-dados" id="btn-jugador-2">Tirar los dados jugador 2</button>
+    <div id="contenedor-del-juego">
+        <div id="juego">
+            <h3 id="numero-de-jugador"></h3>
+            <div id="estado-actual">
+                <p>Ronda #: <span id="ronda-actual">1</span></p>
+                <p>Tiro: <span id="tiro-actual"></span>/3</p>
+            </div>
+            <div class="dados">
+                <div id="dado-1"></div>
+                <div id="dado-2"></div>
+                <div id="dado-3"></div>
+                <button class="btn-tirar-dados" id="btn-jugador-1">Tirar los dados jugador 1</button>
+                <button class="btn-tirar-dados" id="btn-jugador-2">Tirar los dados jugador 2</button>
+            </div>
+            <p id="texto-punjate-del-tiro">Tu puntaje en este tiro es de <span id="puntaje-del-tiro"></span></p>
+            <p id="texto-punjate-del-turno">Tu puntaje en este turno es de <span id="puntaje-del-turno"></span></p>
+            <!-- <p>El jugador 1 tiene <span>7</span> puntos.</p>
+            <p>El jugador 2 tiene <span>4</span> puntos.</p> -->
+        </div>
+    
+        <div id="resultado-final">
+            <p>El puntaje final del jugador 1 es: <span>7</span></p>
+            <p>El puntaje final del jugador 2 es: <span>4</span></p>
+            <p>El ganador de la partida es el jugador <span>1</span></p>
         </div>
     </div>
-    <!-- <p>Tu puntaje en esta ronda es de <span>7</span></p>
-    <p>El jugador 1 tiene <span>7</span> puntos.</p>
-    <p>El jugador 2 tiene <span>4</span> puntos.</p> -->
-
-    <!-- <div id="puntaje-final">
-        <p>El puntaje final del jugador 1 es: <span>7</span></p>
-        <p>El puntaje final del jugador 2 es: <span>4</span></p>
-        <p>El ganador de la partida es el jugador <span>1</span></p>
-    </div> -->
 
     <script src="./juego2.js"></script>
 </body>
