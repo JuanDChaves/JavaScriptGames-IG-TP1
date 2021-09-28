@@ -1,77 +1,96 @@
 // Aquí creo variables que capturan partes o acciones en la página.
-const btnTirarDados = document.getElementById("btn-tirar-dados")
+const btnIniciar = document.getElementById("btn-iniciar")
+const btnJugador1 = document.getElementById("btn-jugador-1")
+const btnJugador2 = document.getElementById("btn-jugador-2")
 const dado1 = document.getElementById("dado-1")
 const dado2 = document.getElementById("dado-2")
 const dado3 = document.getElementById("dado-3")
 
-btnTirarDados.addEventListener("click", (e) => tirarDados())
+btnIniciar.addEventListener("click", (e) => iniciarJuego())
+btnJugador1.addEventListener("click", (e) => tirarDados())
+btnJugador2.addEventListener("click", (e) => tirarDados())
 
-let valorBtn1 = 0
-let valorBtn2 = 0
-let valorBtn3 = 0
-let puntajeJugadorUno = 0
-let puntajeJugadorDos = 0
+let valorDado1 = 0
+let valorDado2 = 0
+let valorDado3 = 0
+// let puntajeJugadorUno = 0
+// let puntajeJugadorDos = 0
 let tiro = 0
+let puntajeDelTiro = 0
+let puntajeDelTurno = 0
 let ronda = 0
+let puntajeTotal = 0
+
+function iniciarJuego() {
+    btnJugador1.disabled = false
+    btnJugador2.disabled = true
+}
 
 
 function tirarDados() {
     
+    tiro++
+    
     for(i = 1; i <= 3; i++) {
         let numAleatorio = parseInt(Math.random(Math.floor) * 6 + 1) 
-        if (i === 1) {
-            valorBtn1 = numAleatorio
-        } else if (i === 2) {
-            valorBtn2 = numAleatorio
+        if (i == 1) {
+            valorDado1 = numAleatorio
+        } else if (i == 2) {
+            valorDado2 = numAleatorio
         } else {
-            valorBtn3 = numAleatorio
+            valorDado3 = numAleatorio
         }
     }
     mostrarDados()
     sumarPuntaje()
+    terminarTurno()
 
-    tiro++
-    if(tiro == 3) {
-        btnTirarDados.disabled = true
-        puntajeDelTurno()
-    }
+    
     console.log(tiro)
 }
 
+function terminarTurno () {
+    if(tiro == 3) {
+        console.log("el puntaje del turno es: ", puntajeDelTurno)
+        tiro = 0
+        ronda++ 
+        console.log("Vamos en la ronda: ", ronda)
+        puntajeDelTurno = 0
+        cambiarDeJugador()
+    }
+}
+
+function cambiarDeJugador() {
+    
+}
+
 function mostrarDados() {
-    dado1.innerText = `Dado 1: ${valorBtn1}`
-    dado2.innerText = `Dado 2: ${valorBtn2}`
-    dado3.innerText = `Dado 3: ${valorBtn3}`
+    dado1.innerText = `Dado 1: ${valorDado1}`
+    dado2.innerText = `Dado 2: ${valorDado2}`
+    dado3.innerText = `Dado 3: ${valorDado3}`
 }
 
 function sumarPuntaje() {
-    let puntajeDelTiro = 0
 
-    if (valorBtn1 % 2 == 0) {
-        puntajeDelTiro = puntajeDelTiro + valorBtn1
+    if (valorDado1 % 2 == 0) {
+        puntajeDelTiro = puntajeDelTiro + valorDado1
     }
-    if (valorBtn2 % 2 == 0) {
-        puntajeDelTiro = puntajeDelTiro + valorBtn2
+    if (valorDado2 % 2 == 0) {
+        puntajeDelTiro = puntajeDelTiro + valorDado2
     }
-    if (valorBtn3 % 2 == 0) {
-        puntajeDelTiro = puntajeDelTiro + valorBtn3
+    if (valorDado3 % 2 == 0) {
+        puntajeDelTiro = puntajeDelTiro + valorDado3
     }
-
-    if (valorBtn1 % 2 !== 0) {
-        if (valorBtn1 == valorBtn2 && valorBtn2 == valorBtn3) {
-            console.log(valorBtn1, "something special")
+    
+    if (valorDado1 % 2 !== 0 || valorDado2 % 2 !== 0 || valorDado3 % 2 !== 0) {
+        if (valorDado1 == valorDado2 && valorDado2 == valorDado3) {
+            tiro--
+            console.log(valorDado1, "trio")
         }
     }
 
-    console.log("el puntaje es: ", puntajeDelTiro)
-
-    return puntajeDelTiro
-} 
-
-function puntajeDelTurno (numero) {
-    let puntajeDelTiro = sumarPuntaje()
-    puntajeJugadorUno = puntajeJugadorUno + puntajeDelTiro
-    console.log("este es el puntaje del jugador uno", puntajeJugadorUno)
+    puntajeDelTurno = puntajeDelTurno + puntajeDelTiro
+    
+    console.log("el puntaje del tiro es: ", puntajeDelTiro)
+    puntajeDelTiro = 0
 }
-
-let puntajeDelTiro
