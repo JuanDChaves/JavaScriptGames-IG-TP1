@@ -10,6 +10,9 @@ const textoPuntajeDelTurno = document.getElementById("texto-punjate-del-turno")
 const puntajeDelTurnoUI = document.getElementById("puntaje-del-turno")
 const rondaActual = document.getElementById("ronda-actual")
 const resultadoFinal = document.getElementById("resultado-final")
+const puntajeFinal1 = document.getElementById("final-1")
+const puntajeFinal2 = document.getElementById("final-2")
+const ganador = document.getElementById("ganador")
 const btnJugador1 = document.getElementById("btn-jugador-1")
 const btnJugador2 = document.getElementById("btn-jugador-2")
 const dado1 = document.getElementById("dado-1")
@@ -29,12 +32,8 @@ let tiro = 0
 let puntajeDelTiro = 0
 let puntajeDelTurno = 0
 let ronda = 1
-let puntajeTotal = 0
 let turnoJugador1
 let turnoJugador2
-let punteFinal1
-let punteFinal2
-
 
 function iniciarJuego() {
     btnJugador2.disabled = true
@@ -73,7 +72,6 @@ function terminarTurno () {
     if(tiro == 3) {
         textoPuntajeDelTurno.style.display = "block"
         puntajeDelTurnoUI.innerText = puntajeDelTurno
-        console.log("el puntaje del turno es: ", puntajeDelTurno)
         tiro = 0
         cambioDeTurno()
         setTimeout(() => {
@@ -91,7 +89,6 @@ function cambioDeTurno () {
         btnJugador2.disabled = false
         numeroDeJugador.innerText = "jugador 2"
         puntajeJugadorUno.push(puntajeDelTurno)
-        console.log("pasa a jugador 2", "puntaje del 1 es: ", puntajeJugadorUno)
     } else if (turnoJugador2 == true) {
         turnoJugador2 = false
         turnoJugador1 = true
@@ -101,7 +98,6 @@ function cambioDeTurno () {
         puntajeJugadorDos.push(puntajeDelTurno)
         ronda++ 
         rondaActual.innerHTML = ronda
-        console.log("pasa a jugador 1", "puntaje del 2 es: ", puntajeJugadorDos)
     }
 }
 
@@ -110,11 +106,14 @@ function terminarJuego () {
         btnJugador1.disabled = true
         juego.style.display = "none"
         resultadoFinal.style.display = "block"
-        console.log("hasta aca")
-        punteFinal1 = puntajeJugadorUno.reduce((accumulator, el) => accumulator + el, 0)
-        console.log("el puntaje final del 1 es: ", punteFinal1)
-        punteFinal2 = puntajeJugadorDos.reduce((accumulator, el) => accumulator + el, 0)
-        console.log("el puntaje final del 2 es: ", punteFinal2)
+        puntajeFinal1.innerHTML = puntajeJugadorUno.reduce((accumulator, el) => accumulator + el, 0)
+        puntajeFinal2.innerHTML = puntajeJugadorDos.reduce((accumulator, el) => accumulator + el, 0)
+    }
+
+    if (puntajeFinal1.innerHTML > puntajeFinal2.innerHTML) {
+        ganador.innerHTML = 1
+    } else if (puntajeFinal2.innerHTML > puntajeFinal1.innerHTML) {
+        ganador.innerHTML = 2
     }
 }
 
