@@ -12,13 +12,18 @@
     <h1>Juego 3</h1>
     <button id="btn-iniciar">Iniciar</button>
     <div id="contenedor-del-juego-3">
-        <span class="tiempo">00:00</span>
-        <span class="vidas">Tienes 3 vidas</span>
+        <p>Tiempo restante: <span id="tiempo"></span></p>
+        <p class="vidas">Tienes <span id="vidas"></span> vidas</p>
         <p class="pregunta">
             <span id="primer-numero"></span> <span id="operador"></span> <span id="segundo-numero"></span> :
         </p>
         <input type="number" name="respuesta" id="input-respuesta">
-        <span>puntaje: 0</span>
+        <p>Tu puntaje es de: <span id="puntaje"></span></p>
+    </div>
+
+    <div id="resutado-final-3">
+        <p>Tu puntaje fue de: <span id="puntaje-final"></span></p>
+        <button id="btn-volver">Volver a intentar</button>
     </div>
         
     <script src="./juego3.js"></script>
