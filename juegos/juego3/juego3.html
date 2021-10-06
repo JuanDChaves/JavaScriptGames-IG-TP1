@@ -9,23 +9,50 @@
     <title>Juego 3</title>
 </head>
 <body>
-    <h1>Juego 3</h1>
-    <button id="btn-iniciar">Iniciar</button>
-    <div id="contenedor-del-juego-3">
-        <p>Tiempo restante: <span id="tiempo"></span></p>
-        <p class="vidas">Tienes <span id="vidas"></span> vidas</p>
-        <p class="pregunta">
-            <span id="primer-numero"></span> <span id="operador"></span> <span id="segundo-numero"></span> :
-        </p>
-        <input type="number" name="respuesta" id="input-respuesta">
-        <p>Tu puntaje es de: <span id="puntaje"></span></p>
+    <div class="contenedor">
+        <header>
+            <h1>TP1 - Juan D Chaves</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../juego1/juego1.html">Juego 1</a></li>
+                <li><a href="../juego2/juego2.html">Juego 2</a></li>
+                <li><a href="#0">Juego 3</a></li>
+                <li><a href="../../yo.html">Acerca de mí</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h3>Juego 3 - Sumas y Restas</h3>
+            <div id="contenedor-del-juego-3">
+                <div id="info">
+                    <p>El objetivo de este juego es alcanzar el puntaje más alto posible antes de que te quedes sin vidas, comienzas con 3 vidas.</p>
+                    <p>Pierdes una vida si tu respuesta es incorrecta.</p>
+                    <p>Para obtener puntos tienes que resolver sumas y restas de números de 0 a 19. Las respuestas pueden ser negativas.</p>
+                    <p>Mientras resuelves las operaciones un reloj va contando de 30 a 0. Cuando el reloj llegue a 0, termina el juego.</p>
+                    <button id="btn-iniciar">Iniciar</button>
+                </div>
+                <div id="juego">
+                    <p>Tiempo restante: <span id="tiempo"></span></p>
+                    <p class="vidas">Vidas que te quedan: <span id="vidas"></span></p>
+                    <p class="pregunta">
+                        <span id="primer-numero"></span> <span id="operador"></span> <span id="segundo-numero"></span> :
+                    </p>
+                    <input type="number" name="respuesta" id="input-respuesta">
+                    <p>Tu puntaje es de: <span id="puntaje"></span></p>
+                </div>
+            </div>
+            <div id="resutado-final-3">
+                <p>Tu puntaje fue de: <span id="puntaje-final"></span></p>
+                <button id="btn-volver">Volver a intentar</button>
+                <img src="../../images/explosion.png" alt="explosion">
+            </div>
+        </section>
+        <footer>
+            <p>Juan D Chaves. Informática General. ATAM. 2021.</p> 
+            <img src="../../images/una-logo.png" alt="El logo de la UNA" id="logo">
+        </footer> 
     </div>
-
-    <div id="resutado-final-3">
-        <p>Tu puntaje fue de: <span id="puntaje-final"></span></p>
-        <button id="btn-volver">Volver a intentar</button>
-    </div>
-        
     <script src="./juego3.js"></script>
 </body>
 

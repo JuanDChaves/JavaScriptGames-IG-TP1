@@ -10,30 +10,54 @@
 </head>
 
 <body>
-    <h1>Juego 1</h1>
-
-    <button class="iniciar">Iniciar</button>
-
-    <div class="contenedor-del-juego" style="display: none;">
-        <div id="contenedor-del-comodin">
-            <button id="comodin">Usar comodin</button>
-        </div>
-        
-        <div id="pregunta">
-            <p id="espacio-para-pregunta">?</p>
-            
-            <input type="radio" name="respuesta" class="respuesta" id="a" value="a">
-            <label for="a" id="texto-opcion-a">?</label>
-            
-            <input type="radio" name="respuesta" class="respuesta" id="b" value="b">
-            <label for="b" id="texto-opcion-b">?</label>
-        </div>
-
-        <button id="boton-enviar"> Enviar respuesta</button>
-        
+    <div class="contenedor">
+        <header>
+            <h1>TP1 - Juan D Chaves</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="#0">Juego 1</a></li>
+                <li><a href="../juego2/juego2.html">Juego 2</a></li>
+                <li><a href="../juego3/juego3.html">Juego 3</a></li>
+                <li><a href="../../yo.html">Acerca de mí</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h3>Juego 1 - Trivia Mundialista</h3>
+            <div id="info">
+                <p>Responde 10 preguntas acerca de los mundiales. Con cada pregunta sumas a tu puntaje el número de pregunta que estás respondiendo. Cuanto más larga la racha ganadora, más alto será tu puntaje</p>
+                <p>Tu puntaje determina en qué nivel estás: 0-100: Ronaldinho. 101-250: Messi. 251-385: Roberto Baggio.</p>
+                <button class="iniciar">Iniciar</button>
+            </div>
+            <div id="contenedor-del-juego-1">
+                <div id="accion">
+                    <div id="pregunta">
+                        <p id="espacio-para-pregunta">?</p>
+                        
+                        <input type="radio" name="respuesta" class="respuesta" id="a" value="a">
+                        <label for="a" id="texto-opcion-a">?</label>
+                        
+                        <input type="radio" name="respuesta" class="respuesta" id="b" value="b">
+                        <label for="b" id="texto-opcion-b">?</label>
+                    </div>
+                    
+                    <button id="boton-enviar"> Enviar respuesta</button>
+                    <div id="contenedor-del-comodin">
+                        <button id="comodin">Preguntale a Simeone</button>
+                        <p>Tu puntaje es de <span id="puntaje-actual"></span> y tu racha de <span id="racha"></span></p>
+                    </div>
+                </div>
+                <div id ="imagenes">
+                    <img src="../../images/lacopa.jpg" alt="La copa del mundo">
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>Juan D Chaves. Informática General. ATAM. 2021.</p> 
+            <img src="../../images/una-logo.png" alt="El logo de la UNA" id="logo">
+        </footer>
     </div>
-
     <script src="./juego1.js"></script>
 </body>
-
 </html>

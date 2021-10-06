@@ -1,11 +1,176 @@
-#contenedor-del-juego {
-  display: none;
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Recursive:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
 }
 
-#contenedor-del-juego-3 {
-  display: none;
+body {
+  font-family: "Roboto", sans-serif;
+  color: #0051ff;
 }
 
-#resutado-final-3 {
-  display: none;
+.contenedor {
+  max-width: 1200px;
+  height: 600px;
+  margin: 40px auto;
+  border: 3px solid #0051ff;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
+
+header {
+  font-family: "Recursive", sans-serif;
+  text-align: center;
+}
+
+nav {
+  font-family: "Recursive", sans-serif;
+  background-color: #0051ff;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+  text-align: center;
+  border-right: #fff 1px solid;
+  border-left: #fff 1px solid;
+  width: 150px;
+  padding: 20px;
+}
+
+ul li:first-child {
+  border-left: #fff 2px solid;
+}
+
+ul li:last-child {
+  border-right: #fff 2px solid;
+}
+
+nav ul li:hover {
+  background-color: #6696ff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fff;
+}
+
+section {
+  padding: 20px;
+}
+
+section ul {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+section ul li {
+  width: 100%;
+  text-align: start;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: #002066;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+  letter-spacing: 1.1px;
+  margin: 15px 0;
+}
+
+footer {
+  font-family: "Recursive", sans-serif;
+  position: absolute;
+  bottom: 0;
+  background-color: #0051ff;
+  color: #fff;
+  text-align: center;
+  padding: 0;
+  align-self: flex-end;
+  width: 100%;
+}
+
+#logo {
+  width: 70px;
+}
+
+img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+/* p {
+  color: #002066;
+} */
+
+/* ESTILOS DE CADA PAGINA */
+
+/* Juego 1 */
+
+#contenedor-del-juego-1 {
+  justify-content: space-between;
+}
+
+#accion {
+  margin: 5px 20px 5px 5px;
+  width: 100%;
+  text-align: center;
+}
+
+#imagenes {
+  margin: 5px 5px 5px 5px;
+  width: 50%;
+  text-align: center;
+}
+
+/* Juego 2 */
+#contenedor-del-juego-2 {
+  margin: 15px;
+}
+
+img.dado {
+  width: 80px;
+}
+
+.btn-tirar-dados {
+  margin: 10px;
+}
+
+#dados {
+  display: flex;
+  align-content: space-between;
+}
+
+.dado {
+  margin: 10px;
+}
+
+#btn-jugador-1:disabled {
+  background-color: #6696ff;
+}
+
+#btn-jugador-2:disabled {
+  background-color: #6696ff;
+}
+
+/* Juego 3 */
+
+/* colores:
+#0050FF azul 
+#6696ff azul claro
+#002066 azul oscuro */

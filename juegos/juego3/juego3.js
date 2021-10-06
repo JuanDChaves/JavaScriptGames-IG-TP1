@@ -1,6 +1,8 @@
-
+// Con estas variables tengo acceso a partes del DOM
 const btnIniciar = document.getElementById("btn-iniciar")
 const contenedorDelJuego = document.getElementById("contenedor-del-juego-3")
+const info = document.getElementById("info")
+const juego = document.getElementById("juego")
 const primerNumeroUI = document.getElementById("primer-numero")
 const segundoNumeroUI = document.getElementById("segundo-numero")
 const operadorUI = document.getElementById("operador")
@@ -8,6 +10,9 @@ const tiempoUI = document.getElementById("tiempo")
 const vidasQueQuedan = document.getElementById("vidas")
 const inputRespuesta = document.getElementById("input-respuesta")
 const puntajeActual = document.getElementById("puntaje")
+const resultadoFinal = document.getElementById("resutado-final-3")
+const puntajeFinal = document.getElementById("puntaje-final")
+const btnVolver = document.getElementById("btn-volver")
 
 
 let respuestaIngresada
@@ -25,12 +30,16 @@ let tiempo
 vidasQueQuedan.innerHTML = vidas
 puntajeActual.innerHTML = puntaje
 
-
+resultadoFinal.style.display = "none"
+juego.style.display = "none"
+inputRespuesta.value = ""
 
 // Con este event listener inicia el juego llamo al reloj y determino la cantidad de segundos
 btnIniciar.addEventListener("click", () => {
+    info.style.display = "none"
+    juego.style.display = "block"
     cargarPregunta()
-    tiempoUI.innerHTML = 5
+    tiempoUI.innerHTML = 30
     relojito()
     console.log("resultado: ", operacionResuelta)
 })
@@ -41,13 +50,14 @@ function relojito() {
     intervalo = setInterval(cuentaHasta0, 1000);
 }
 
+// Esta función permite tener una cuenta infinita de 10 a 0
 function cuentaHasta0() {
     if (tiempoUI.innerHTML <= 1) {
         clearInterval(intervalo)
-        console.log("ya se habia acabado el tiempo")
-        setTimeout(nuevaPregunta(), 1000) 
+        resultadoFinal.style.display = "block"
+        contenedorDelJuego.style.display = "none"
+        puntajeFinal.innerHTML = puntaje
     } else {
-        console.log("no se habia acabado el tiempo")
     } 
     tiempoUI.innerHTML--
 }
@@ -107,40 +117,37 @@ function operadorRandom() {
 inputRespuesta.addEventListener("keypress", (e) => {
     if(e.code === "Enter") {
         respuestaIngresada = inputRespuesta.value
+        console.log(respuestaIngresada)
+        evaluar()
+        nuevaPregunta()
+        inputRespuesta.value = ""
     } 
-    evaluar()
-    cargarPregunta()
 })
 
-// function turno() {
-//     if (vidas == 1) {
-//         contenedorDelJuego.style.display = "none"
-//         resultadoFinal()
-//     } 
-//     evaluar()
-// }
-
-// function resultadoFinal() {
-//     console.log("se acabo")
-// }
-
-// function evaluar () {
-//     if (seAcabo === false) {
-//         console.log("no se habia acabado el tiempo")
-//     } else if (seAcabo === true) {
-//         limpiarPregunta()
-//         console.log("ya se habia acabado el tiempo")
-//     }
-
-//     // if (respuestaIngresada !== undefined) {
-        
-//     // }
-// }
-
-
-// // respuestaIngresada != operacionResuelta  || 
-
-// function nuevaPregunta () {
-//     limpiarPregunta()
-//     cargarPregunta()
-// }
+// Esta función determina el puntaje
+function evaluar () {
+    if(respuestaIngresada == operacionResuelta) {
+        puntaje++ 
+        puntajeActual.innerHTML = puntaje
+        console.log("bien, el puntaje ahora es: ", puntaje)
+    } else {
+        vidas--
+        vidasQueQuedan.innerHTML = vidas
+        if (vidas == 0) {
+            console.log("aqui deberia terminar")
+            terminarJuego()
+        }
+        console.log("mal")
+    }
+}
+// Esta función es similar a la del botón de iniciar pero condensa otros cambios en el DOM
+btnVolver.addEventListener("click", () => {
+    info.style.display = "none"
+    juego.style.display = "block"
+    cargarPregunta()
+    tiempoUI.innerHTML = 30
+    relojito()
+    console.log("resultado: ", operacionResuelta)
+    resultadoFinal.style.display = "none"
+    inputRespuesta.value = ""
+})

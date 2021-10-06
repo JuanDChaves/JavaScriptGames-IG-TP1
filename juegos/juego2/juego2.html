@@ -10,35 +10,61 @@
 </head>
 
 <body>
-    <h1>Juego 2</h1>
-    <button id="btn-iniciar">Iniciar</button>
-    <div id="contenedor-del-juego">
-        <div id="juego">
-            <h3 id="numero-de-jugador"></h3>
-            <div id="estado-actual">
-                <p>Ronda #: <span id="ronda-actual">1</span></p>
-                <p>Tiro: <span id="tiro-actual"></span>/3</p>
+    <div class="contenedor">
+        <header>
+            <h1>TP1 - Juan D Chaves</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../juego1/juego1.html">Juego 1</a></li>
+                <li><a href="#0">Juego 2</a></li>
+                <li><a href="../juego3/juego3.html">Juego 3</a></li>
+                <li><a href="../../yo.html">Acerca de mí</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h3>Juego 2</h3>
+            <div id="contenedor-del-juego-2">
+                <div id="info">
+                    <p>En este juego de 3 dados para 2 personas el objetivo conseguir el puntaje más alto.</p>
+                    <p>Son 5 rondas con 3 tiros para cada jugador por ronda. Los dados pares suman, los impares no.</p>
+                    <p>Cuando salen 3 impares iguales, el jugador tiene un turno más.</p>
+                    <button id="btn-iniciar">Iniciar</button>
+                </div>
+                
+                <div id="accion">
+                    <div id="juego">
+                        <h3 id="numero-de-jugador"></h3>
+                        <div id="estado-actual">
+                            <p>Ronda #: <span id="ronda-actual">1</span></p>
+                            <p>Tiro: <span id="tiro-actual"></span>/3</p>
+                        </div>
+                        <div id="dados">
+                            <button class="btn-tirar-dados" id="btn-jugador-1">Tirar los dados jugador 1</button>
+                            <button class="btn-tirar-dados" id="btn-jugador-2">Tirar los dados jugador 2</button>
+                            <div id="dado-1"><img class="dado" src="../../images/dado0.png" alt="Dado 1"></div>
+                            <div id="dado-2"><img class="dado" src="../../images/dado0.png" alt="Dado 2"></div>
+                            <div id="dado-3"><img class="dado" src="../../images/dado0.png" alt="Dado 3"></div>
+                        </div>
+                        <p id="premiado">¡Este es un tiro premiado! Tienes otro tiro.</p>
+                        <p id="texto-punjate-del-tiro">Tu puntaje en este tiro es de <span id="puntaje-del-tiro"></span></p>
+                        <p id="texto-punjate-del-turno">Tu puntaje en este turno es de <span id="puntaje-del-turno"></span></p>
+                    </div>
+                    <div id="resultado-final">
+                        <p>El puntaje final del jugador 1 es: <span id="final-1"></span></p>
+                        <p>El puntaje final del jugador 2 es: <span id="final-2"></span></p>
+                        <p>El ganador de la partida es el jugador <span id="ganador"></span></p>
+                    </div>
+                
+                </div>
             </div>
-            <div class="dados">
-                <div id="dado-1"></div>
-                <div id="dado-2"></div>
-                <div id="dado-3"></div>
-                <button class="btn-tirar-dados" id="btn-jugador-1">Tirar los dados jugador 1</button>
-                <button class="btn-tirar-dados" id="btn-jugador-2">Tirar los dados jugador 2</button>
-            </div>
-            <p id="texto-punjate-del-tiro">Tu puntaje en este tiro es de <span id="puntaje-del-tiro"></span></p>
-            <p id="texto-punjate-del-turno">Tu puntaje en este turno es de <span id="puntaje-del-turno"></span></p>
-            <!-- <p>El jugador 1 tiene <span>7</span> puntos.</p>
-            <p>El jugador 2 tiene <span>4</span> puntos.</p> -->
-        </div>
-    
-        <div id="resultado-final">
-            <p>El puntaje final del jugador 1 es: <span id="final-1"></span></p>
-            <p>El puntaje final del jugador 2 es: <span id="final-2"></span></p>
-            <p>El ganador de la partida es el jugador <span id="ganador"></span></p>
-        </div>
+        </section>
+        <footer>
+            <p>Juan D Chaves. Informática General. ATAM. 2021.</p> 
+            <img src="../../images/una-logo.png" alt="El logo de la UNA" id="logo">
+        </footer>
     </div>
-
     <script src="./juego2.js"></script>
 </body>
 

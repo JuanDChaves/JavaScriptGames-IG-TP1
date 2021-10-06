@@ -10,10 +10,36 @@
 </head>
 
 <body>
-    <a href="./juegos/juego1/juego1.html">1</a>
-    <a href="./juegos/juego2/juego2.html">2</a>
-    <a href="./juegos/juego3/juego3.html">3</a>
-    <a href="./yo.html">Yo</a>
+    <div class="contenedor">
+        <header>
+            <h1>TP1 - Juan D Chaves</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#0">Home</a></li>
+                <li><a href="./juegos/juego1/juego1.html">Juego 1</a></li>
+                <li><a href="./juegos/juego2/juego2.html">Juego 2</a></li>
+                <li><a href="./juegos/juego3/juego3.html">Juego 3</a></li>
+                <li><a href="./yo.html">Acerca de mí</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h3>Hola (Haz click <span id="aqui">aquí</span>)</h3>
+            <p>En esta página se encuentra mi Trabajo Práctico #1 de Informática General. En este TP hay 3 juegos desarrollados en JavaScript:
+                <ul>
+                    <li>1. Trivia mundialista: Es un juego de 10 preguntas en el que acumulas puntos. Si mantienes una racha tu puntaje es premiado</li>
+                    <li>2. Juego de dados: Este juego para 2 jugadores utiliza 3 dados en 5 rondas. El que obtenga el mayor puntaje, gana!</li>
+                    <li>3. Sumas y restas contra reloj. Deberás resolver las operaciónes antes de que el reloj llegue a 0. Tienes 3 vidas.</li>
+                </ul>
+            </p>
+            <p id="gracias">Gracias por jugarlos!</p>
+        </section>
+        <footer>
+            <p>Juan D Chaves. Informática General. ATAM. 2021.</p> 
+            <img src="./images/una-logo.png" alt="El logo de la UNA" id="logo">
+        </footer>
+    </div>
+    <script src="./index.js"></script>
 </body>
 
 </html>
